@@ -131,22 +131,30 @@ body { background-color: #eff8f5 }
 
 /* Desktop - inside padding  */
 @media (min-width:768px) {
-	.container-flexbox { }
+	.container-flexbox {
+		padding: 2% 10% 1% 10%;
+	 }
 }
 
 /* Mobiles - inside padding */
 @media (max-width:767px) {
-	.container-flexbox { }
+	.container-flexbox {
+		padding: 7% 8% 1% 8%;
+	 }
 }
 
 /* Background color */
 .container-flexbox.bg-orange { background-color: #ff5000 }
-
+.container-flexbox.bg-orange *{
+	color: #fff;
+}
 
 /* ====== INNER FLEXBOX COLUMN: 1 COLUMN EVERY SCREEN ======= */
 
 .container-flexbox .item-col-1 { 
-	width: 100%;
+	width: 100%;{
+		pedding: 1% 6% 0 6% ;
+	}
 	
 }
 
@@ -154,14 +162,17 @@ body { background-color: #eff8f5 }
 /* =======INNER FLEXBOX COLUMNS: 3 COLUMNS ON DESKTOPS, 1 COLUMN ON MOBILES ===== */
 
 /* Desktops - 3 columns */
+/* all screen sizes */
+.container-flexbox.happy-users .item-col-3 { text-align: center; }
+
 @media (min-width:768px) { 
-	.container-flexbox .item-col-3 { width: 33.33% }
+	.container-flexbox.happy-users .item-col-3 { width: 30%; margin-bottom: 3%; }
 	
 }
 
 /* Mobiles - 1 column */
 @media (max-width:767px) { 
-	.container-flexbox .item-col-3 { width: 100% }
+	.container-flexbox.happy-users .item-col-3 { width: 47%; margin-bottom:14% ; }
 	
 }
 
@@ -202,7 +213,10 @@ body { background-color: #eff8f5 }
 	margin-right: auto;
 	margin-bottom:20px;
 	width: 70%; 
-
+	border-radius: 100%;
+	border-color:#ff5000;
+	border-style: solid;
+	border-width: 6px;
 }
 
 
@@ -322,10 +336,8 @@ body { background-color: #eff8f5 }
   }
 }
 
-section { 
-	border: solid 2px red
-}
 
-section div { 
-	border: solid 2px blue
+/* ** utility class **  */
+.container-flexbox.bg-orange *{
+	color: #fff !important;
 }
