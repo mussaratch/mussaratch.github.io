@@ -23,13 +23,14 @@ body {
 }
 
 .hero-block {
-    min-height: 500px;
-    position: relative;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    background-color: gray;
-    overflow: none;
+  min-height: 500px;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  background-color: gray;
+  overflow: none;
+}
 }
 
 @media (min-width: 768px) { 

@@ -12,11 +12,13 @@ input, button, textarea, select { font: inherit }
 /* ================= ENDS ================ */
 
 
-
 /* ============== HEADERS AND SECTIONS ============ */
 
 /* Default header and widths */
 header, section { width: 100% }
+
+/* Last element at bottom of header or section */
+header *:last-child, section *:last-child { margin-bottom: 0 }
 
 /* =================== HEADER ================ */
 
@@ -29,13 +31,11 @@ header, section { width: 100% }
 		padding-left: calc( (100% - 1140px)/2 );
 		padding-right: calc( (100% - 1140px)/2 );
 	}
-
-	header-narrow {
+    .header-narrow {
 		padding-left: calc( (100% - 920px)/2 );
 		padding-right: calc( (100% - 920px)/2 );
 	}
 }
-
 
 /* Tablets and smaller desktops */
 @media (min-width: 1025px) and (max-width: 1199px ) { 
@@ -57,8 +57,7 @@ header, section { width: 100% }
 	header { padding: 7% 10% 8% 10% } 
 }
 
-
-* Image in header */
+/* Image in header */
 header img {
     max-width: 800px;
     margin-left: auto;
@@ -66,22 +65,23 @@ header img {
     margin-bottom: 24px;
 }
 
-
 /* Main heading in header */
 header h1 {
-	font-family: 'Noto Serif', serif;
+	font-family: 'Fira Sans', sans-serif;
     font-size: calc(48px + (84 - 48) * ((100vw - 320px) / (1140 - 320)));
-    color: #1f364d;
-    letter-spacing: -1px;
+    color: #1435b3;
+    letter-spacing: 1px;
     margin-bottom: 20px;
+	font-weight: 500;
 }
 
 /* Sub-heading in header */
 header h2 {
-	font-family: 'Noto Serif', serif;
+	font-family: 'Fira Sans', sans-serif;
     font-size: calc(19px + (22 - 18) * ((100vw - 320px) / (1140 - 320)));
     color: #2F4F4F;
     line-height: 1.6;
+	font-weight: 500;
 }
 
 /* ======================= SECTIONS ======================== */
@@ -95,12 +95,11 @@ header h2 {
 		padding-left: calc( (100% - 1140px)/2 );
 		padding-right: calc( (100% - 1140px)/2 );
 	}
-	.section-narrow {
+    .section-narrow {
 		padding-left: calc( (100% - 920px)/2 );
 		padding-right: calc( (100% - 920px)/2 );
 	}
 }
-
 
 /* Tablets and smaller desktops */
 @media (min-width: 1025px) and (max-width: 1199px ) { 
@@ -124,27 +123,91 @@ header h2 {
 
 /* Sections: main heading */
 section h1 {
-	font-family: 'Noto Serif', serif;
+	font-family: 'Fira Sans', sans-serif;
     font-size: calc(32px + (48 - 32) * ((100vw - 320px) / (1140 - 320)));
-    letter-spacing: -1px;
-    color: #000;
+    letter-spacing: 1px;
+    color: #1435b3;
     margin-bottom: 12px;
     line-height: 1.2;
+	font-weight: 500;
 }
 
 /* Sections: text paragraphs */
 section p {
-    font-family: 'Rubik', sans-serif;
-    font-size: calc(17px + (20 - 17) * ((100vw - 320px) / (1140 - 320)));
+	font-family: 'Arvo', serif;
+    font-size: calc(17px + (21 - 17) * ((100vw - 320px) / (1140 - 320)));
     color: #2F4F4F;
     margin-bottom: 20px;
-    line-height: 1.5;
+    line-height: 1.7;
 }
-	/* Coloured backgrounds */{
-	.bg-header   { background-color: #f5f9fb }
-	.bg-pastel-1 { background-color: #BEC7B4 }
-	.bg-pastel-2 { background-color: #DEE2D9 }
-	}
 
-=============== UTILTY CLASSES ==============
-.text-center { text-align:center !important }
+/* Coloured backgrounds */
+.bg-header { background-color: #f5f9fb }
+.bg-blue-light { background-color: #d8f0f5 }
+.bg-blue-dark { background-color: #1435b3 }
+
+/* Default gradient direction: top to bottom */ 
+.bg-blue-dark { background-image: linear-gradient(#0575e6, #1435b3) } 
+
+/* Gradient direction: left to right */  
+.bg-blue-dark { background-image: linear-gradient(90deg, #0575e6, #1435b3) } 
+
+/* Light blue section background: h1 headings and p text paragraphs */
+.bg-blue-light h1 { color: #1435b3 }
+.bg-blue-light p  { color: #222 }
+
+/* Dark blue section background: h1 headings and p text paragraphs */
+.bg-blue-dark h1 { color: #fff }
+.bg-blue-dark p  { color: #fff }
+
+/* =============== BUTTONS AND ICONS ============== */
+/* All buttons */
+.btn {
+    font-family: sans-serif; text-decoration: none;
+    padding: 14px 26px; font-size: 18px; font-weight: bold;
+    /* text-transform: uppercase; 
+    letter-spacing: 1px;
+    word-spacing: 102%; */
+ }
+ /* Solid buttons */
+.btn-solid:link, .btn-solid:visited {
+    background-color: blue; 
+    color: #fff;
+ } 
+ 
+ .btn-solid:focus, .btn-solid:hover, .btn-solid:active  {
+    background-color: darkblue;
+    color: #fff;
+ } 
+ 
+ /* Gradient buttons */
+ .btn-gradient:link, .btn-gradient:visited {
+    background-image: linear-gradient(90deg,#e052a0,#f15c41);
+    color: #fff;
+ } 
+ 
+ .btn-gradient:focus, .btn-gradient:hover, .btn-gradient:active  {
+    background-image: linear-gradient(to right,#3ec7e0,#526bf4);
+    color: #fff;
+ } 
+ 
+ /* Ghost buttons */
+ .btn-ghost:link, .btn-ghost:visited {
+    border: solid 2px #000;
+    color: #000;
+    background-color: transparent; 
+    padding: 12px 24px;
+ } 
+ 
+ .btn-ghost:focus, .btn-ghost:hover, .btn-ghost:active  {
+    border: solid 2px blue;
+    color: blue;
+    background-color: transparent; 
+    padding: 12px 24px;
+ } 
+ /* Button corner styles */
+.btn-soft    { border-radius: 5px }
+.btn-rounded { border-radius: 30px }
+
+/* =============== UTILTY CLASSES ============== */
+.text-center { text-align: center !important }
