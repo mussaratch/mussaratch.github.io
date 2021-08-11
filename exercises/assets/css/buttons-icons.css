@@ -159,6 +159,27 @@ section p {
 /* Dark blue section background: h1 headings and p text paragraphs */
 .bg-blue-dark h1 { color: #fff }
 .bg-blue-dark p  { color: #fff }
+.container-btn {
+    margin-top: 32px; margin-bottom: 32px;
+    display: flex;
+}
+
+.container-btn .btn {
+    align-self: flex-start;
+} 
+
+@media (min-width: 767px) {
+    .container-btn a:first-child { margin-right: 40px }
+    /* .container-btn { justify-content: center } */
+}
+
+@media (max-width: 767px) {
+    .container-btn { flex-direction: column }
+    .container-btn a:first-child { margin-bottom: 32px }
+    .container-btn a:last-child { margin-bottom: 0 }
+    /* .container-btn .btn { align-self: center } */
+}
+
 
 /* =============== BUTTONS AND ICONS ============== */
 /* All buttons */
@@ -208,6 +229,10 @@ section p {
  /* Button corner styles */
 .btn-soft    { border-radius: 5px }
 .btn-rounded { border-radius: 30px }
+
+/* Buttons with Font Awesome icons */
+
+.btn i { margin-right: 10px; }
 
 /* =============== UTILTY CLASSES ============== */
 .text-center { text-align: center !important }
