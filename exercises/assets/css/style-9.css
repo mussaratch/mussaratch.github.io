@@ -40,23 +40,13 @@ h3 {
 /* Paragraphs of text */
 p {
 	font-family: 'Roboto', sans-serif;
-    font-size: 20px;
+    font-size: 16px;
     color: #696969;
-    line-height: 1.7
+    line-height: 1.5
 }
 
 /* Div selector with properties and values */
 
-div { 
-    background-color: deeppink; 
-    padding: 12px; 
-    border-style: solid; 
-    border-color: green; 
-    border-top-width: 4px; 
-    border-right-width: 4px; 
-    border-bottom-width: 4px; 
-    border-left-width: 4px; 
-}
 
 .bono {
     background-color: #4081ec;
@@ -85,7 +75,7 @@ div {
     margin-bottom: 40px; 
     width: 220px 
 }
-The CSS selector .bono applies to web page content inside a HTML tag pair with a class name of "bono".
+ The CSS selector .bono applies to web page content inside a HTML tag pair with a class name of "bono".
 .bono h3,
 .bono p,
 .adam h3,
@@ -96,7 +86,7 @@ The CSS selector .bono applies to web page content inside a HTML tag pair with a
 .larry h3,
 .larry p { color: #000 }
    
- }
+ 
  .bono h3,
 .bono p,
 .adam h3,

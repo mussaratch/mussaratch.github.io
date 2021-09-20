@@ -51,13 +51,13 @@ p {
    margin-bottom: 20px;
 }
 
-
-/*image*/
-img{
-    margin-bottom: 42px;
-    /*drop shadow effect at and bottom of image */
-    box-shadow: 8px 10px 8px 888;
+/* Images */
+img {
+    margin-bottom: 32px;
+    /* Soften corners of images */
+    border-radius: 15px;
 }
+
 /* Passive link styles */               
 a:link, a:visited {
     text-decoration: none;

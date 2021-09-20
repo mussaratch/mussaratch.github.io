@@ -12,11 +12,13 @@ input, button, textarea, select { font: inherit }
 /* ================= ENDS ================ */
 
 
-
 /* ============== HEADERS AND SECTIONS ============ */
 
 /* Default header and widths */
 header, section { width: 100% }
+
+/* Last element at bottom of header or section */
+header *:last-child, section *:last-child { margin-bottom: 0 }
 
 /* =================== HEADER ================ */
 
@@ -29,13 +31,11 @@ header, section { width: 100% }
 		padding-left: calc( (100% - 1140px)/2 );
 		padding-right: calc( (100% - 1140px)/2 );
 	}
-
-	header-narrow {
+    .header-narrow {
 		padding-left: calc( (100% - 920px)/2 );
 		padding-right: calc( (100% - 920px)/2 );
 	}
 }
-
 
 /* Tablets and smaller desktops */
 @media (min-width: 1025px) and (max-width: 1199px ) { 
@@ -57,15 +57,13 @@ header, section { width: 100% }
 	header { padding: 7% 10% 8% 10% } 
 }
 
-
-* Image in header */
+/* Image in header */
 header img {
     max-width: 800px;
     margin-left: auto;
     margin-right: auto;
     margin-bottom: 24px;
 }
-
 
 /* Main heading in header */
 header h1 {
@@ -95,12 +93,11 @@ header h2 {
 		padding-left: calc( (100% - 1140px)/2 );
 		padding-right: calc( (100% - 1140px)/2 );
 	}
-	.section-narrow {
+    .section-narrow {
 		padding-left: calc( (100% - 920px)/2 );
 		padding-right: calc( (100% - 920px)/2 );
 	}
 }
-
 
 /* Tablets and smaller desktops */
 @media (min-width: 1025px) and (max-width: 1199px ) { 
@@ -140,11 +137,11 @@ section p {
     margin-bottom: 20px;
     line-height: 1.5;
 }
-	/* Coloured backgrounds */
-	.bg-header   { background-color: #f5f9fb }
-	.bg-pastel-1 { background-color: #BEC7B4 }
-	.bg-pastel-2 { background-color: #DEE2D9 }
-	
 
- /* =============== UTILITY CLASSES ============== */
-.text-center { text-align:center !important }
+/* Coloured backgrounds */
+.bg-header { background-color: #f5f9fb }
+.bg-pastel-1   { background-color: #BEC7B4 }
+.bg-pastel-2   { background-color: #DEE2D9 }
+
+/* =============== UTILTY CLASSES ============== */
+.text-center { text-align: center !important }
