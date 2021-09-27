@@ -58,7 +58,7 @@ header, section { width: 100% }
 }
 
 
-* Image in header */
+/* Image in header */
 header img {
     max-width: 800px;
     margin-left: auto;

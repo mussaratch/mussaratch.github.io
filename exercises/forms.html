@@ -14,10 +14,8 @@
    <!-- Google Fonts -->
    <link rel="preconnect" href="https://fonts.gstatic.com">
    <link href="https://fonts.googleapis.com/css2?family=Arvo:ital,wght@0,400;0,700;1,400;1,700&family=Fira+Sans:ital,wght@0,500;1,500&display=swap" rel="stylesheet">  
-   <link rel="stylesheet" href="forms.css"> 
-   <title>Sample web page with an email sign up form</title>
-<meta name="description" content="A sample web page with a form for capturing an user's email address.">   
-ss<meta name="description" content="Using HTML5 section tags to create a web page with alternating light and dark coloured backgrounds.">  
+     
+<meta name="description" content="Using HTML5 section tags to create a web page with alternating light and dark coloured backgrounds.">  
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Arvo:ital,wght@0,400;0,700;1,400;1,700&family=Fira+Sans:ital,wght@0,400;0,500;1,400;1,500&display=swap" rel="stylesheet"> 
@@ -63,23 +61,65 @@ ss<meta name="description" content="Using HTML5 section tags to create a web pag
         <p>In pellentesque, odio suscipit ornare vulputate, est nunc consequat neque, nec faucibus nulla arcu id ligula. Proin laoreet cursus vulputate. Curabitur accumsan leo ipsum, et pellentesque velit pretium at. Etiam aliquam, ipsum eu tincidunt.</p>
     </section>
 
-    <div class="container-form">
-        <form action="#" method="POST" id="email-form">
-           <label for=""></label>
-           <input type="email" id="email" name="email" placeholder="email address">
-           <button type="submit" class="btn btn-solid btn-rounded"><i class="fas fa-arrow-right"></i> Subscribe</button>   
-         </form>
-      </div>
 
     <section class="section-narrow bg-blue-light">
         <h1>Section Heading Four</h1>
         <p><b>Lorem ipsum dolor</b> sit amet consectetur adipisicing elit. Ea assumenda qui totam nam corrupti dolorum. Dolores minus doloribus obcaecati cupiditate odit voluptatem recusandae maxime consectetur, delectus labore asperiores enim nobis.</p>
+
+        <div class="container-form">
+            <form action="#https://formspree.io/f/xknkylpn" method="POST" id="email-form">
+               <label for=""></label>
+               <input type="email" id="email" name="email" placeholder="email address" required >
+               <button id="my-form-button" type="submit" class="btn btn-solid btn-rounded"><i class="fas fa-arrow-right"></i> Subscribe</button>  
+                <div id="form-status"></div>
+             </form>
+          </div>
 
         <p>In pellentesque, odio suscipit ornare vulputate, est nunc consequat neque, nec faucibus nulla arcu id ligula. Proin laoreet cursus vulputate. Curabitur accumsan leo ipsum, et pellentesque velit pretium at. Etiam aliquam, ipsum eu tincidunt.</p>
     </section>
 
 </article>
 </main>
+<script>
+    var form = document.getElementById("email-form");
+            
+    async function handleSubmit(event) {
+      event.preventDefault();
+      const status = document.getElementById("form-status");
+      const data = new FormData(event.target);
+      fetch(event.target.action, {
+        method: form.method,
+        body: data,
+        headers: {
+            'Accept': 'application/json'
+        }
+      }).then(response => {
+        document.getElementById("form-status").style.display="block";
+        status.innerHTML = "Thanks for your submission!";
+        form.reset();
+        setTimeout(function() {
+            const msg = document.getElementById("form-status");
+            msg.style.transition = '.5s';
+            msg.style.opacity = '0';
+            msg.style.visibility = 'hidden';
+            msg.style.display = 'none';
+        }, 1250);
+    
+      }).catch(error => {
+        document.getElementById("form-status").style.display="block";
+        status.innerHTML = "Oops! There was a problem submitting your form."
+        setTimeout(function() {
+            const msg = document.getElementById("form-status");
+            msg.style.transition = '.5s';
+            msg.style.opacity = '0';
+            msg.style.visibility = 'hidden';
+            msg.style.display = 'none';
+        }, 1250);
+      });
+    }
+    form.addEventListener("submit", handleSubmit)
+    
+    </script>
 
 </body>
 </html>

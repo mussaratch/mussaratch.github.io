@@ -31,7 +31,7 @@ body {
   background-color: gray;
   overflow: none;
 }
-}
+
 
 @media (min-width: 768px) { 
     .hero-block { height: 80vh }
@@ -49,12 +49,13 @@ body {
    z-index: 1;
    background-image: linear-gradient(rgba(0,0,0,0.3),rgba(0,0,0,0.3));   
 }
-.hero-text-container { padding: 0 12% 4% 12% }
+.hero-text-container { padding: 0 12% 4% 12%; z-index: 2 }
 
 
 .hero-block h1, .hero-block h2 {
     line-height: 1.2;
     color:#fff;
+    text-shadow: 2px 2px #222; ;
 }
 
 .hero-block h1 {
