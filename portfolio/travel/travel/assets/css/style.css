@@ -132,15 +132,13 @@ body { background-color: #eff8f5 }
 /* Desktop - inside padding  */
 @media (min-width:768px) {
 	.container-flexbox {
-		padding: 2% 10% 1% 10%;
-	 }
+		padding: 2% 10% 1% 10%;}
 }
 
 /* Mobiles - inside padding */
 @media (max-width:767px) {
 	.container-flexbox {
-		padding: 7% 8% 1% 8%;
-	 }
+		padding: 7% 8% 1% 8%; }
 }
 
 /* Background color */
@@ -172,7 +170,7 @@ body { background-color: #eff8f5 }
 
 /* Mobiles - 1 column */
 @media (max-width:767px) { 
-	.container-flexbox.happy-users .item-col-3 { width: 47%; margin-bottom:14% ; }
+	.container-flexbox.happy-users .item-col-3 { width: 100%; margin-bottom:10% ; }
 	
 }
 
@@ -180,13 +178,13 @@ body { background-color: #eff8f5 }
 
 /* Desktops - 4 columns */
 @media (min-width:768px) { 
-	.container-flexbox .item-col-4-2 { width: 25% }
+	.container-flexbox .item-col-4-2 { width: 22% }
 	
 }
 
 /* Mobiles - 2 columns */
 @media (max-width:767px) { 
-	.container-flexbox .item-col-4-2 { width: 50% }
+	.container-flexbox .item-col-4-2 { width: 47% }
 	
 }
 
